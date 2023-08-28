@@ -20,4 +20,5 @@ class AgentsController extends Controller
       return Inertia::render('Agents', [
       
       ]);
+    }
 }
