@@ -1,4 +1,8 @@
 ```
+  sail build
+```
+
+```
   sail up
 ```
 

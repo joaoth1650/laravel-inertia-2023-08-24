@@ -8,17 +8,18 @@ use Inertia\Inertia;
 
 class AgentsController extends Controller
 {
-    public function agentSingle()
+    public function agentSingle($agentUuid)
     {
-      $id = "41fb69c1-4189-7b37-f117-bcaf1e96f1bf";
-      $result = AgentsApiValorantRepository::getAgent($id);
+      $result = AgentsApiValorantRepository::getAgent($agentUuid);
       return Inertia::render('Agent', [
         'agent' => $result
       ]);
     } 
     public function allAgents(){
+      $result = AgentsApiValorantRepository::allAgents();
+
       return Inertia::render('Agents', [
-      
+        'agents' => $result
       ]);
     }
 }

@@ -22,7 +22,8 @@ Route::get('/teste', function () {
     return AgentsApiValorantRepository::allAgents();
 });
 
-Route::get('/agente', [AgentsController::class, 'agentSingle'])->name('agente.single');
+Route::get('/agente/{agentUuid}', [AgentsController::class, 'agentSingle'])->name('agente.single');
+Route::get('/agentes', [AgentsController::class, 'allAgents'])->name('agente.all');
 
 
 
