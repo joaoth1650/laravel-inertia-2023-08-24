@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AgentsController;
+use App\Http\Controllers\MapsController;
 use App\Http\Controllers\ExempleController;
 use App\Http\Controllers\ProfileController;
 use App\Repositories\API\AgentsApiValorantRepository;
+use App\Repositories\API\MapsApiValorantRepository;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -22,8 +24,6 @@ Route::get('/teste', function () {
     return AgentsApiValorantRepository::allAgents();
 });
 
-Route::get('/agente/{agentUuid}', [AgentsController::class, 'agentSingle'])->name('agente.single');
-Route::get('/agentes', [AgentsController::class, 'allAgents'])->name('agente.all');
 
 
 
@@ -48,6 +48,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/exemple',[ExempleController::class,'index'], function () {
         
     });
+    ////agents
+    Route::get('/agente/{agentUuid}', [AgentsController::class, 'agentSingle'])->name('agente.single');
+    Route::get('/agentes', [AgentsController::class, 'allAgents'])->name('agente.all');
+    ////maps
+     Route::get('/map/{agentUuid}', [MapsController::class, 'mapSingle'])->name('map.single');
+
+    Route::get('/maps', [MapsController::class, 'allMaps'])->name('maps.all');
+    
+
+
 });
 
 require __DIR__.'/auth.php';
