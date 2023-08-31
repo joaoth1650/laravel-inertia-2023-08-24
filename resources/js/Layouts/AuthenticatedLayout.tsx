@@ -31,6 +31,11 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                                     Agentes
                                 </NavLink>
                             </div>
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={route('map.all')} active={route().current('map.all')}>
+                                    Mapas
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -105,6 +110,11 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('agente.all')} active={route().current('agente.all')}>
                             Agentes
+                        </ResponsiveNavLink>
+                    </div>
+                    <div className="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink href={route('map.all')} active={route().current('map.all')}>
+                            mapas
                         </ResponsiveNavLink>
                     </div>
 

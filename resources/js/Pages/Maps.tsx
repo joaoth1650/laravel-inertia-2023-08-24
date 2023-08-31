@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { MapInfoInterface } from '@/Interfaces/MapInterface';
 
-export default function maps({ auth, maps }: PageProps<{ maps: any }>) {
+export default function Maps({ auth, maps }: PageProps<{ maps: any }>) {
         const settings = {
           dots: true,
           infinite: true,
@@ -29,17 +29,17 @@ export default function maps({ auth, maps }: PageProps<{ maps: any }>) {
         <Slider {...settings}>
           {maps.map((map: MapInfoInterface, index: any) => (
             <div key={index}>
-                <Link href={route('agente.single', { mapUuid: map.uuid })} >
+                <Link href={route('map.single', { mapUuid: map.uuid })} >
               <div>
                 <Card > 
                   <CardActionArea >
-                    <CardMedia component="img" image={map.fullPortraitV2} />
+                    <CardMedia component="img" image={map.splash} style={{width: '60%', margin: 'auto'}} />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
                         <h1 className="text-center fs-25">{map.displayName}</h1>
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        <h2 className='text-center'>{map.description}</h2>
+                        <h2 className='text-center'>{map.narrativeDescription}</h2>
                       </Typography>
                     </CardContent>
                   </CardActionArea>               

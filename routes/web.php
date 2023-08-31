@@ -52,9 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/agente/{agentUuid}', [AgentsController::class, 'agentSingle'])->name('agente.single');
     Route::get('/agentes', [AgentsController::class, 'allAgents'])->name('agente.all');
     ////maps
-     Route::get('/map/{agentUuid}', [MapsController::class, 'mapSingle'])->name('map.single');
+     Route::get('/map/{mapUuid}', [MapsController::class, 'mapSingle'])->name('map.single');
 
-    Route::get('/maps', [MapsController::class, 'allMaps'])->name('maps.all');
+    Route::get('/maps', [MapsController::class, 'allMaps'])->name('map.all');
     
 
 
