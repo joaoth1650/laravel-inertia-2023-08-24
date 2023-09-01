@@ -1,0 +1,10 @@
+/* .slick-dots {
+  /* Defina a cor de fundo desejada 
+  background-color: #FF0000; Substitua pela cor desejada 
+} */
+
+/* Estilize os dots individuais */
+.slick-dots li {
+  /* Defina a cor de fundo dos dots individuais, se necessário */
+  background-color: #ffffff; /* Substitua pela cor desejada */
+}

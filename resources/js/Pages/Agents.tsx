@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { AgentInterface } from '@/Interfaces/AgentInterface';
+import './mainhoUm.css'
 
 export default function Agents({ auth, agents }: PageProps<{ agents: any }>) {
     const settings = {
@@ -31,7 +32,7 @@ export default function Agents({ auth, agents }: PageProps<{ agents: any }>) {
                         <div key={index}>
                             <Link href={route('agente.single', { agentUuid: agent.uuid })} >
                                 <div>
-                                    <Card style={{ backgroundImage: `url('${agent.background}')`, backgroundBlendMode: 'difference', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} >
+                                    <Card style={{ backgroundImage: `url('${agent.background}')`, backgroundBlendMode: 'difference', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',  }} >
                                         <CardActionArea >
                                             <Typography gutterBottom variant="h5" component="div">
                                                 <h1 className="text-center fs-25">{agent.displayName}</h1>
@@ -39,7 +40,7 @@ export default function Agents({ auth, agents }: PageProps<{ agents: any }>) {
                                             <CardMedia component="img" style={{ width: '40%', margin: 'auto' }} image={agent.fullPortraitV2} />
                                             <CardContent>
                                                 <Typography variant="body2" color="text.secondary">
-                                                    <h2 className='text-center'>{agent.description}</h2>
+                                                    <h2 className='text-center mt-5'>{agent.description}</h2>
                                                 </Typography>
                                             </CardContent>
                                         </CardActionArea>
