@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgentsController;
+use App\Http\Controllers\DashBoardSearchController;
 use App\Http\Controllers\MapsController;
 use App\Http\Controllers\ExempleController;
 use App\Http\Controllers\ProfileController;
@@ -36,9 +37,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashBoardSearchController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
